@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: author-book-api
+
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:mysql://localhost:3306/author_book_management_system`}
+    username: ${DB_USERNAME:`root`}
+    password: ${DB_PASSWORD:`Aa161616`}
+    driverClassName: ${DB_DRIVER:`com.mysql.cj.jdbc.Driver`}
+    dialect: MYSQL
+    schema-generate: CREATE_DROP
+    auto-commit: true
+
+environments:
+  production:
+    datasources:
+      default:
+        url: ${DATABASE_URL}
+        dialect: POSTGRES
+        driverClassName: org.postgresql.Driver
+        schema-generate: NONE
