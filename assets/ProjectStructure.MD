@@ -2,22 +2,24 @@
 author-book-api/
 ├── build.gradle
 ├── settings.gradle
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/
-│   │   │       ├── AuthorBookApiApplication.java
-│   │   │       ├── controller/
-│   │   │       │   ├── AuthorController.java
-│   │   │       │   └── BookController.java
-│   │   │       ├── entity/
-│   │   │       │   ├── Author.java
-│   │   │       │   └── Book.java
-│   │   │       └── repository/
-│   │   │           ├── AuthorRepository.java
-│   │   │           └── BookRepository.java
-│   │   └── resources/
-│   │       └── application.yml
+src/main/java/
+└── com/example/app/
+    ├── models/
+    │   ├── Author.java
+    │   └── Book.java
+    │── repositories/
+    │   ├── AuthorRepository.java
+    │   └── BookRepository.java
+    ├── routes/
+    │   ├── AuthorController.java
+    │   └── BookController.java
+    └── Application.java
+src/main/resources/
+├── application.yml
+├── application-dev.yml
+├── application-test.yml
+└── application-prod.yml
+
 └── gradle/
     └── wrapper/
 
