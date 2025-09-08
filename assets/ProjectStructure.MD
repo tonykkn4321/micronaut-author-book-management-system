@@ -52,3 +52,6 @@ gradlew build --info
 
 # If modified build.gradle, run:
 ./gradlew clean build
+
+# Bypass test during build:
+./gradlew build -x test
