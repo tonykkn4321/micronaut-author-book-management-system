@@ -13,38 +13,22 @@ repositories {
 }
 
 dependencies {
-    // Annotation processors
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
 
-    // Core Micronaut runtime
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
-
-    // Micronaut Data JDBC + HikariCP
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.data:micronaut-data-jdbc")
-
-    // Optional: Micronaut validation (for @Valid, @NotBlank, etc.)
     implementation("io.micronaut.validation:micronaut-validation")
-
-    // Optional: Micronaut management endpoints (health, metrics)
+    implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-management")
 
-    // HTTP client
-    implementation("io.micronaut:micronaut-http-client")
-
-    // Logging
     runtimeOnly("ch.qos.logback:logback-classic")
-
-    // PostgreSQL driver
     runtimeOnly("org.postgresql:postgresql:42.7.1")
-
-    // YAML support
     runtimeOnly("org.yaml:snakeyaml:2.2")
 
-    // Testing
     testImplementation("io.micronaut.test:micronaut-test-junit5")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
