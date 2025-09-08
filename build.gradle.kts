@@ -52,9 +52,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental.set(true)
-        // annotations.add("my.app.*")
-        annotations.add("my.app.repositories")
-
+        annotations.add("my.app.*")
     }
     aot {
         optimizeServiceLoading.set(false)
