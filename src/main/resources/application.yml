@@ -2,7 +2,7 @@ datasources:
   default:
     url: jdbc:postgresql://postgres:cfITGFFqJyIoZWawTFLPlnqWbgWeoMoG@postgres.railway.internal:5432/railway
     driverClassName: org.postgresql.Driver
-    dialect: org.hibernate.dialect.PostgreSQLDialect  # Ensure dialect is fully qualified
+    dialect: org.hibernate.dialect.PostgreSQLDialect  # Fully qualified dialect
     schema-generate: CREATE
     dialect-options:
       ssl: true
