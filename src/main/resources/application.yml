@@ -1,6 +1,6 @@
 datasources:
   default:
-    url: ${DATABASE_URL}
+    url: jdbc:postgresql://postgres:cfITGFFqJyIoZWawTFLPlnqWbgWeoMoG@postgres.railway.internal:5432/railway
     driverClassName: org.postgresql.Driver
     dialect: org.hibernate.dialect.PostgreSQLDialect  # Ensure dialect is fully qualified
     schema-generate: CREATE
