@@ -23,7 +23,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-jdbc")
     
     // Add the JPA dependency
-    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+    //implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 
     implementation("io.micronaut:micronaut-http-client")
 
