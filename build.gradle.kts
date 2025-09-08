@@ -25,7 +25,7 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
 
     runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("com.mysql:mysql-connector-j")
+    // runtimeOnly("com.mysql:mysql-connector-j")
     runtimeOnly("org.postgresql:postgresql:42.7.1")
     runtimeOnly("org.yaml:snakeyaml:2.2")
 
