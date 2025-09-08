@@ -1,50 +1,48 @@
 package my.app.routes;
 
+import io.micronaut.http.annotation.*;
 import my.app.models.Book;
 import my.app.repositories.BookRepository;
-import io.micronaut.http.annotation.*;
-import jakarta.inject.Inject;
+
 import java.util.List;
+import java.util.Optional;
 
 @Controller("/books")
 public class BookController {
 
-    @Inject
-    BookRepository bookRepo;
+    private final BookRepository bookRepository;
+
+    public BookController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    @Get("/")
+    public Iterable<Book> listAll() {
+        return bookRepository.findAll();
+    }
 
     @Get("/{id}")
-    public Book getById(@PathVariable Long id) {
-        return bookRepo.findById(id).orElse(null);
+    public Optional<Book> getById(@PathVariable Long id) {
+        return bookRepository.findById(id);
     }
 
-    @Get
-    public List<Book> listAll() {
-        return bookRepo.findAll();
+    @Get("/by-author/{authorId}")
+    public List<Book> getByAuthor(@PathVariable Long authorId) {
+        return bookRepository.findByAuthorId(authorId);
     }
 
-    @Post
+    @Post("/")
     public Book create(@Body Book book) {
-        return bookRepo.save(book);
+        return bookRepository.save(book);
     }
 
     @Put("/{id}")
     public Book update(@PathVariable Long id, @Body Book updated) {
-        updated.setId(id);
-        return bookRepo.update(updated);
-    }
-
-    @Patch("/{id}")
-    public Book patch(@PathVariable Long id, @Body Book partial) {
-        return bookRepo.findById(id).map(existing -> {
-            if (partial.getTitle() != null) existing.setTitle(partial.getTitle());
-            if (partial.getYear() != null) existing.setYear(partial.getYear());
-            if (partial.getAuthor() != null) existing.setAuthor(partial.getAuthor());
-            return bookRepo.update(existing);
-        }).orElse(null);
+        return bookRepository.update(updated);
     }
 
     @Delete("/{id}")
     public void delete(@PathVariable Long id) {
-        bookRepo.deleteById(id);
+        bookRepository.deleteById(id);
     }
 }
