@@ -1,20 +1,21 @@
 package my.app.models;
 
-import jakarta.persistence.*;
+import io.micronaut.data.annotation.*;
+import java.time.Year;
 
-@Entity
+@MappedEntity
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     private String title;
+
     private Integer year;
 
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
+    @MappedProperty("author_id")
+    private Long authorId;
 
     // Getters and setters
     public Long getId() {
@@ -41,11 +42,11 @@ public class Book {
         this.year = year;
     }
 
-    public Author getAuthor() {
-        return author;
+    public Long getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
     }
 }
