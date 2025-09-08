@@ -1,4 +1,4 @@
-package my.app.controllers;
+package my.app.routes;
 
 import io.micronaut.http.annotation.*;
 import my.app.models.Author;
