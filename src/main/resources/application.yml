@@ -2,7 +2,7 @@ datasources:
   default:
     url: ${DATABASE_URL}
     driverClassName: org.postgresql.Driver
-    dialect: POSTGRES
+    dialect: org.hibernate.dialect.PostgreSQLDialect  # Ensure dialect is fully qualified
     schema-generate: CREATE
     dialect-options:
       ssl: true
