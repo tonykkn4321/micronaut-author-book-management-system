@@ -21,11 +21,13 @@ dependencies {
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.data:micronaut-data-jdbc")
-    // implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+    
+    // Add the JPA dependency
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+
     implementation("io.micronaut:micronaut-http-client")
 
     runtimeOnly("ch.qos.logback:logback-classic")
-    // runtimeOnly("com.mysql:mysql-connector-j")
     runtimeOnly("org.postgresql:postgresql:42.7.1")
     runtimeOnly("org.yaml:snakeyaml:2.2")
 
