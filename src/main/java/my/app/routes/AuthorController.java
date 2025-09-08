@@ -1,7 +1,7 @@
-package com.example.app.routes;
+package my.app.routes;
 
-import com.example.app.models.Author;
-import com.example.app.repositories.AuthorRepository;
+import my.app.models.Author;
+import my.app.repositories.AuthorRepository;
 import io.micronaut.http.annotation.*;
 import jakarta.inject.Inject;
 import java.util.List;

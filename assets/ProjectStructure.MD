@@ -3,7 +3,7 @@ author-book-api/
 ├── build.gradle
 ├── settings.gradle
 src/main/java/
-└── com/example/app/
+└── my/app/
     ├── models/
     │   ├── Author.java
     │   └── Book.java

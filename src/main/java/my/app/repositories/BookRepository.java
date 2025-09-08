@@ -1,6 +1,6 @@
-package com.example.app.repositories;
+package my.app.repositories;
 
-import com.example.app.models.Book;
+import my.app.models.Book;
 import io.micronaut.data.annotation.Repository;
 import io.micronaut.data.repository.CrudRepository;
 
