@@ -11,3 +11,8 @@ datasources:
     dialect: POSTGRES
     dialect-options:
       ssl: false  # Set to true if Railway requires SSL
+
+logger:
+  levels:
+    io.micronaut.data.query: DEBUG
+    io.micronaut.sql: DEBUG
