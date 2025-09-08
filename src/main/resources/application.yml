@@ -7,7 +7,6 @@ datasources:
     dialect: POSTGRES
     dialect-options:
       ssl: false  # or true, depending on Railway's requirements
-
 jpa:
   default:
     properties:
@@ -15,3 +14,9 @@ jpa:
         hbm2ddl:
           auto: update
         show_sql: false
+jpa:
+  default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
