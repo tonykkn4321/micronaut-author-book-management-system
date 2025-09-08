@@ -26,7 +26,22 @@ src/main/resources/
 
 
 # Start a prject:
-mn create-app example.micronaut --features jdbc,mysql,postgresql
+mn create-app my-app --features mysql,data-jdbc
+
+# files modified:
+settings.gradle
+build.gradle
+
+# Upgrade Gradle Wrapper:
+gradlew wrapper --gradle-version 8.4
+# Clean Your Cache
+# Delete your local Gradle cache to force fresh resolution:
+rd /s /q "%USERPROFILE%\.gradle\caches"
+
+# Set Environment:
+export MICRONAUT_ENVIRONMENTS=dev  (for linux)
+set MICRONAUT_ENVIRONMENTS=dev   (for cmd)
+
 
 # Run the Application:
 ./gradlew run
