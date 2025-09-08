@@ -1,3 +1,7 @@
+micronaut:
+  application:
+    name: my-app
+
 datasources:
   default:
     url: jdbc:postgresql://postgres.railway.internal:5432/railway
@@ -6,12 +10,4 @@ datasources:
     driverClassName: org.postgresql.Driver
     dialect: POSTGRES
     dialect-options:
-      ssl: false  # or true, depending on Railway's requirements
-
-jpa:
-  default:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-        show_sql: true
+      ssl: false  # Set to true if Railway requires SSL
