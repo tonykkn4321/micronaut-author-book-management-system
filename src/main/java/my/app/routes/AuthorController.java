@@ -1,49 +1,42 @@
-package my.app.routes;
+package my.app.controllers;
 
+import io.micronaut.http.annotation.*;
 import my.app.models.Author;
 import my.app.repositories.AuthorRepository;
-import io.micronaut.http.annotation.*;
-import jakarta.inject.Inject;
-import java.util.List;
+
+import java.util.Optional;
 
 @Controller("/authors")
 public class AuthorController {
 
-    @Inject
-    AuthorRepository authorRepo;
+    private final AuthorRepository authorRepository;
+
+    public AuthorController(AuthorRepository authorRepository) {
+        this.authorRepository = authorRepository;
+    }
+
+    @Get("/")
+    public Iterable<Author> listAll() {
+        return authorRepository.findAll();
+    }
 
     @Get("/{id}")
-    public Author getById(@PathVariable Long id) {
-        return authorRepo.findById(id).orElse(null);
+    public Optional<Author> getById(@PathVariable Long id) {
+        return authorRepository.findById(id);
     }
 
-    @Get
-    public List<Author> listAll() {
-        return authorRepo.findAll();
-    }
-
-    @Post
+    @Post("/")
     public Author create(@Body Author author) {
-        return authorRepo.save(author);
+        return authorRepository.save(author);
     }
 
     @Put("/{id}")
     public Author update(@PathVariable Long id, @Body Author updated) {
-        updated.setId(id);
-        return authorRepo.update(updated);
-    }
-
-    @Patch("/{id}")
-    public Author patch(@PathVariable Long id, @Body Author partial) {
-        return authorRepo.findById(id).map(existing -> {
-            if (partial.getFirstName() != null) existing.setFirstName(partial.getFirstName());
-            if (partial.getLastName() != null) existing.setLastName(partial.getLastName());
-            return authorRepo.update(existing);
-        }).orElse(null);
+        return authorRepository.update(updated);
     }
 
     @Delete("/{id}")
     public void delete(@PathVariable Long id) {
-        authorRepo.deleteById(id);
+        authorRepository.deleteById(id);
     }
 }
