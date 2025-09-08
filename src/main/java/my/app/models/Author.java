@@ -1,20 +1,24 @@
 package my.app.models;
 
-import jakarta.persistence.*;
+import io.micronaut.data.annotation.*;
 import java.util.List;
 
-@Entity
+@MappedEntity
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Book> books;
+    // JDBC doesn't support @OneToMany directly
+    // You can model this as a manual join in your repository
+    // or use @Relation if you're using Micronaut Data 4+
+
+    // Example placeholder field
+    // private List<Book> books;
 
     // Getters and setters
     public Long getId() { return id; }
@@ -25,7 +29,4 @@ public class Author {
 
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
-
-    public List<Book> getBooks() { return books; }
-    public void setBooks(List<Book> books) { this.books = books; }
 }
