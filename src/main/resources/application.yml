@@ -12,14 +12,6 @@ datasources:
     dialect-options:
       ssl: false  # Set to true if Railway requires SSL
 
-jpa:
-  default:
-            properties:
-              hibernate:
-                bytecode:
-                  provider: none
-            packages-to-scan:
-              - 'my.app.models' # Adjust to your entity package
 
 logger:
   levels:
