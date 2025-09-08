@@ -10,8 +10,5 @@ datasources:
 
 jpa:
   default:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-        show_sql: true
+    packages-to-scan:
+      - 'com.entity' 
