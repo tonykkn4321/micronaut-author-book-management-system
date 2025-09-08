@@ -1,13 +1,12 @@
 datasources:
   default:
-    url: jdbc:postgresql://postgres:cfITGFFqJyIoZWawTFLPlnqWbgWeoMoG@postgres.railway.internal:5432/railway
+    url: jdbc:postgresql://postgres.railway.internal:5432/railway
     username: postgres
     password: cfITGFFqJyIoZWawTFLPlnqWbgWeoMoG
     driverClassName: org.postgresql.Driver
-    dialect: org.hibernate.dialect.PostgreSQLDialect  # Fully qualified dialect
-    schema-generate: CREATE
+    dialect: POSTGRES
     dialect-options:
-      ssl: false
+      ssl: false  # or true, depending on Railway's requirements
 
 jpa:
   default:
