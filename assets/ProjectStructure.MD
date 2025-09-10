@@ -1,25 +1,25 @@
 # Project structure:
-author-book-api/
+my-app/
 ├── build.gradle
 ├── settings.gradle
-src/main/java/
-└── my/app/
-    ├── models/
-    │   ├── Author.java
-    │   └── Book.java
-    │── repositories/
-    │   ├── AuthorRepository.java
-    │   └── BookRepository.java
-    ├── routes/
-    │   ├── AuthorController.java
-    │   └── BookController.java
-    └── Application.java
+src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── my/app/
+│   │   │       ├── controllers/
+│   │   │       │   ├── AuthorController.java
+│   │   │       │   └── BookController.java
+│   │   │       ├── models/
+│   │   │       │   ├── Author.java
+│   │   │       │   └── Book.java
+│   │   │       └── repositories/
+│   │   │           ├── AuthorRepository.java
+│   │   │           └── BookRepository.java
 src/main/resources/
 ├── application.yml
 ├── application-dev.yml
 ├── application-test.yml
 └── application-prod.yml
-
 └── gradle/
     └── wrapper/
 
